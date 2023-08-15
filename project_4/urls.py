@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from thebear.views import get_homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', get_homepage, name='get_homepage')
 ]
