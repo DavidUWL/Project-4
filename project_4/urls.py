@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from thebear.views import get_homepage
+from therestaurant.views import get_homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
