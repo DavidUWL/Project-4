@@ -1,4 +1,6 @@
-.hero_image {
+.hero {
     background: url('images/home_hero.jpg');
-    height: auto;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
 }

@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-daviduwl-project4-0401s56zk5y.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['8000-daviduwl-project4-8akp2a9c5qi.ws-eu104.gitpod.io']
 
 
 # Application definition
