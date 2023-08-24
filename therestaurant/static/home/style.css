@@ -1,6 +1,17 @@
+body {
+    /* background-color: black; */
+}
+
 .hero {
-    background: url('images/home_hero.jpg');
-    background-size: cover;
+    background: url('images/home_hero.jpg') no-repeat;
+    background-size: contain;
     min-height: 100vh;
-    position: relative;
+}
+
+@media (min-width: 425px) {
+
+    .hero  {
+        min-height: 60vh;
+    }
+
 }
