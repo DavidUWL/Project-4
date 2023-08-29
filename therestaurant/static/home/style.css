@@ -3,15 +3,31 @@ body {
 }
 
 .hero {
-    background: url('images/home_hero.jpg') no-repeat;
-    background-size: contain;
+    background: url('images/home_hero.jpg') no-repeat center center;
+    background-size: cover;
     min-height: 100vh;
 }
 
 @media (min-width: 425px) {
 
     .hero  {
-        min-height: 60vh;
+        min-height: 100vh;
+        align-items: center;
     }
 
+}
+
+
+/* navbar */
+
+/* .navbar {
+    background-color: #35170c;
+} */
+
+/* footer */
+
+i {
+    font-size: 3em;
+    text-decoration: none;
+    color: #cd9400;
 }
