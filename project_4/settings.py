@@ -27,8 +27,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-daviduwl-project4-cq1at890wed.ws-eu104.gitpod.io']
-
+ALLOWED_HOSTS = ['8000-daviduwl-project4-64ej47pi08x.ws-eu104.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://*.8000-daviduwl-project4-64ej47pi08x.ws-eu104.gitpod.io', 'https://*.127.0.0.1']
 
 # Application definition
 
@@ -38,9 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
     'therestaurant'
 ]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

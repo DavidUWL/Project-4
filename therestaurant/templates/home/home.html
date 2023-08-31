@@ -16,23 +16,24 @@
 </head>
 
 <body>
-    <!-- navbar -->
-
-
-
-
     <!-- hero + contents-->
     <div class="hero container-fluid">
         <nav class="navbar navbar-dark navbar-expand-xs">
             <div class="container-fluid gx-1">
-                    <span class="navbar-brand h1">The restaurant</span>
-                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                    <a class="btn btn-success" href="{% static 'home/menu.pdf' %}" download>Menu</a>
-                    <button type="button" class="btn btn-success">Book Table</button>
+                <span class="navbar-brand h1">The Restaurant</span>
+                {% if user.is_authenticated %}
+                <a class="btn btn-success" href="{% url 'account_logout' %}">Logout</a>
+                {% else %}
+                <a class="btn btn-success" href="{% url 'account_login'%}">login</a>
+                {% endif %}
+                <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Login</button> -->
+                <a class="btn btn-success" href="{% static 'home/menu.pdf' %}" download>Menu</a>
+                <button type="button" class="btn btn-success">Book Table</button>
             </div>
         </nav>
 
-    <!-- footer -->
+        <!-- footer -->
         <div class="container footer fixed-bottom">
             <div class="row justify-content-center">
                 <div class="col-2">
@@ -48,11 +49,9 @@
         </div>
     </div>
 
-    
-
 
     <!-- login modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down">
             <div class="modal-content">
                 <div class="modal-header">
@@ -71,11 +70,12 @@
                             <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="btn btn-primary" href="accounts/signup/">Register</a>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- scripts -->
