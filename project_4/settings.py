@@ -27,8 +27,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-daviduwl-project4-64ej47pi08x.ws-eu104.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://*.8000-daviduwl-project4-64ej47pi08x.ws-eu104.gitpod.io', 'https://*.127.0.0.1']
+ALLOWED_HOSTS = ['8000-daviduwl-project4-29cj9rm1g08.ws-eu104.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-29cj9rm1g08.ws-eu104.gitpod.io', 'https://*.127.0.0.1']
 
 # Application definition
 

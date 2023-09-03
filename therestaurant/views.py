@@ -1,6 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from therestaurant.forms import ReserveForm
+
+
 # Create your views here.
 
 
 def get_homepage(request):
     return render(request, 'home/home.html')
+
+
+def get_booking(request):
+    return render(request, 'booktable/booktable.html')
+
+
+def reserve_table(request):
+    if request.POST:
+        form = ReserveForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/reservetable')
+    return render(request, 'reservetable/reservetable.html', {'form': ReserveForm})

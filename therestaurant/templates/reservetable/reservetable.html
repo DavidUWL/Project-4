@@ -1,0 +1,12 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'reservetable' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+
+{% endblock %}
