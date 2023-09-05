@@ -9,8 +9,8 @@ def get_homepage(request):
     return render(request, 'home/home.html')
 
 
-def get_booking(request):
-    return render(request, 'booktable/booktable.html')
+def get_reservation(request):
+    return render(request, 'reservetable/reservetable.html')
 
 
 def reserve_table(request):
@@ -21,3 +21,4 @@ def reserve_table(request):
             form.save()
         return redirect('/reservetable')
     return render(request, 'reservetable/reservetable.html', {'form': ReserveForm})
+

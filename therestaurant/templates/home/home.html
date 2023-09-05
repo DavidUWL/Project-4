@@ -20,20 +20,25 @@
     <div class="hero container-fluid">
         <nav class="navbar navbar-dark navbar-expand-xs">
             <div class="container-fluid gx-1">
-                <span class="navbar-brand h1">The Restaurant</span>
+                <a class="navbar-brand h1" href="{%url 'get_homepage' %}">The Restaurant</a>
                 {% if user.is_authenticated %}
                 <a class="btn btn-success" href="{% url 'account_logout' %}">Logout</a>
                 {% else %}
-                <a class="btn btn-success" href="{% url 'account_login'%}">login</a>
+                <a class="btn btn-success" href="{% url 'account_login' %}">login</a>
                 {% endif %}
                 <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                     data-bs-target="#loginModal">Login</button> -->
                 <a class="btn btn-success" href="{% static 'home/menu.pdf' %}" download>Menu</a>
-                <button type="button" class="btn btn-success">Book Table</button>
+                <a type="button" class="btn btn-success" href="{% url 'reservetable' %}">Book Table</a>
             </div>
         </nav>
         <div>
             {% block content %}
+            <!-- <div class="container-fluid" style="height: 100vh;">
+                <div class="d-flex align">
+                    <div class="col-6 display-1">Lorem ipsum dolor sit amet</div>
+                </div>
+            </div> -->
             {% endblock %}
         </div>
 
@@ -92,3 +97,4 @@
 </body>
 
 </html>
+
