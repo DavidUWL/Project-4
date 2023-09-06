@@ -4,26 +4,28 @@ from .models import Reservation
 
 
 class ReserveForm(ModelForm):
-    first_name = forms.TextInput(attrs={"required": True})
-    last_name = forms.TextInput(attrs={"required": True})
-    email = forms.EmailInput(attrs={"required": True})
-    contact_number = forms.NumberInput(attrs={"required": True})
+    COVERS_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+    ]
 
-    date = forms.DateField(attrs={"required": True})
-    time = forms.TimeField(attrs={"required": True})
-    covers = forms.NumberInput(attrs={"required": True})
+    covers = forms.ChoiceField(
+        choices=COVERS_CHOICES,
+        widget=forms.Select(attrs={'class': 'form-control', 'required': True}),
+    )
 
     class Meta:
         model = Reservation
         fields = ['first_name', 'last_name', 'email',
                   'contact_number', 'date', 'time', 'covers']
         widgets = {
-            first_name: TextInput(attrs={"required": True}),
-            last_name: TextInput(attrs={"required": True}),
-            email: EmailInput(attrs={"required": True}),
-            contact_number: NumberInput(attrs={"required": True}),
-
-            date: DateField(attrs={"required": True}),
-            time: TimeField(attrs={"required": True}),
-            covers: NumberInput(attrs={"required": True})
+            'first_name': forms.TextInput(attrs={'class': 'form-control', "required": True}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', "required": True}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', "required": True}),
+            'contact_number': forms.NumberInput(attrs={'type': 'tel', 'class': 'form-control', "required": True}),
+            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control', "required": True}),
+            'time': forms.TimeInput(attrs={'type': 'time', 'class': 'form-control', "required": True}),
+            # 'covers': forms.Select(attrs={'class': 'form-control'}),
         }
