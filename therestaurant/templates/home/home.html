@@ -23,6 +23,7 @@
                 <a class="navbar-brand h1" href="{%url 'get_homepage' %}">The Restaurant</a>
                 {% if user.is_authenticated %}
                 <a class="btn btn-success" href="{% url 'account_logout' %}">Logout</a>
+                <a class="btn btn-success" href="{% url 'get_bookings' %}">View bookings</a>
                 {% else %}
                 <a class="btn btn-success" href="{% url 'account_login' %}">login</a>
                 {% endif %}

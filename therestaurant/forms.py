@@ -29,3 +29,4 @@ class ReserveForm(ModelForm):
             'time': forms.TimeInput(attrs={'type': 'time', 'class': 'form-control', "required": True}),
             # 'covers': forms.Select(attrs={'class': 'form-control'}),
         }
+

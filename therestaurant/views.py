@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from therestaurant.forms import ReserveForm
+from .models import Reservation
 
 
 # Create your views here.
@@ -18,7 +19,15 @@ def reserve_table(request):
         form = ReserveForm(request.POST)
         print(request.POST)
         if form.is_valid():
-            form.save()
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.save()
         return redirect('/reservetable')
+
     return render(request, 'reservetable/reservetable.html', {'form': ReserveForm})
+
+
+def get_bookings(request):
+    user_bookings = Reservation.objects.filter(user=request.user)
+    return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings})
 
