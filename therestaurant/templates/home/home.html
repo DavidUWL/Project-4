@@ -27,19 +27,12 @@
                 {% else %}
                 <a class="btn btn-success" href="{% url 'account_login' %}">login</a>
                 {% endif %}
-                <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                    data-bs-target="#loginModal">Login</button> -->
                 <a class="btn btn-success" href="{% static 'home/menu.pdf' %}" download>Menu</a>
                 <a type="button" class="btn btn-success" href="{% url 'reservetable' %}">Book Table</a>
             </div>
         </nav>
         <div>
             {% block content %}
-            <!-- <div class="container-fluid" style="height: 100vh;">
-                <div class="d-flex align">
-                    <div class="col-6 display-1">Lorem ipsum dolor sit amet</div>
-                </div>
-            </div> -->
             {% endblock %}
         </div>
 
@@ -58,35 +51,6 @@
             </div>
         </div>
     </div>
-
-
-    <!-- login modal -->
-    <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-sm-down">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a class="btn btn-primary" href="accounts/signup/">Register</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/ce66787713.js" crossorigin="anonymous"></script>
