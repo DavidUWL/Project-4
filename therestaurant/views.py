@@ -30,4 +30,3 @@ def reserve_table(request):
 def get_bookings(request):
     user_bookings = Reservation.objects.filter(user=request.user)
     return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings})
-

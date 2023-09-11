@@ -1,10 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
 
-# class UserProfile(models.model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+class Table(models.Model):
+    table_number = (models.IntegerField(unique=True))
+    table_covers = (models.IntegerField())
+
+
+def get_default_table():
+    try:
+        return Table.objects.get(table_number=1)
+    except Table.DoesNotExist:
+        return None
 
 
 class Reservation(models.Model):
@@ -16,3 +23,4 @@ class Reservation(models.Model):
     date = models.DateField(null=False, blank=False)
     time = models.TimeField(null=False, blank=False)
     covers = models.IntegerField(null=False, blank=False)
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, default=get_default_table)
