@@ -11,7 +11,7 @@ def get_homepage(request):
 
 
 def get_reservation(request):
-    return render(request, 'reservetable/reservetable.html')
+    return render(request, 'reservetable/reservetable.html', {'user': request.user})
 
 
 def reserve_table(request):
