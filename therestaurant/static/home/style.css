@@ -24,3 +24,7 @@ i {
     text-decoration: none;
     color: #cd9400;
 }
+
+#id_time div {
+    display: inline-block;
+}

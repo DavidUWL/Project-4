@@ -8,3 +8,5 @@ from .models import Reservation
 class PersonAdmin(admin.ModelAdmin):
     pass
 
+
+
