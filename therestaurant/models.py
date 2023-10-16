@@ -6,6 +6,9 @@ class Table(models.Model):
     table_number = (models.IntegerField(unique=True))
     table_covers = (models.IntegerField())
 
+    def __str__(self):
+        return f"Table {self.table_number}" 
+
 
 def get_default_table():
     try:
@@ -24,3 +27,5 @@ class Reservation(models.Model):
     time = models.TimeField(null=False, blank=False)
     covers = models.IntegerField(null=False, blank=False)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=get_default_table)
+
+# class Menu(models.Model):
