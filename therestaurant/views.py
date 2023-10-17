@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from therestaurant.forms import ReserveForm
-from .models import Reservation, Table
+from .models import Reservation, Table, Menu
 
 
 def get_homepage(request):
@@ -54,3 +54,6 @@ def get_bookings(request):
     return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings})
 
 
+def get_menu(request):
+    menu_items = Menu.objects.all()
+    return render(request, 'menu/menu.html', {'menu_items': menu_items})

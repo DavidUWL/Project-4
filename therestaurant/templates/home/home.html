@@ -37,7 +37,7 @@
                         {% else %}
                         <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
                         {% endif %}
-                        <li><a class="dropdown-item" href="{% static 'home/menu.pdf' %}">Menu</a></li>
+                        <li><a class="dropdown-item" href="{% url 'get_menu' %}">Menu</a></li>
                         <li><a class="dropdown-item" href="{% url 'reservetable' %}">Book Table</a></li>
                     </ul>
                   </li>

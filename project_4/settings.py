@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django.contrib.staticfiles',
-    'therestaurant'
+    'therestaurant',
+    'djmoney'
 ]
 
 SITE_ID = 1

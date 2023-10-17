@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from djmoney.models.fields import MoneyField
 
 
 class Table(models.Model):
@@ -28,4 +29,10 @@ class Reservation(models.Model):
     covers = models.IntegerField(null=False, blank=False)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=get_default_table)
 
-# class Menu(models.Model):
+class Menu(models.Model):
+    dish_name = models.CharField(max_length=50, null=False, blank=False)
+    description = models.CharField(max_length=80, null=True, blank=True)
+    price = MoneyField(max_digits=14, decimal_places=2, default_currency='EUR')
+
+    def __str__(self):
+        return self.dish_name
