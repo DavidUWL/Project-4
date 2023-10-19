@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from therestaurant.forms import ReserveForm
 from .models import Reservation, Table, Menu
 
@@ -57,3 +57,12 @@ def get_bookings(request):
 def get_menu(request):
     menu_items = Menu.objects.all()
     return render(request, 'menu/menu.html', {'menu_items': menu_items})
+
+
+def cancel_booking(request, entry_id):
+    entry = get_object_or_404(Reservation, pk=entry_id)
+
+    if request.method == 'POST':
+        entry.delete()
+        return redirect('get_bookings')
+    return render(request, 'cancel_booking/cancel_booking.html', {'entry': entry})

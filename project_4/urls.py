@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from therestaurant.views import get_homepage, get_reservation, reserve_table, get_bookings, get_menu
+from therestaurant.views import *
+
 
 
 urlpatterns = [
@@ -24,6 +25,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('reservetable/', reserve_table, name='reservetable'),
     path('viewbookings/', get_bookings, name='get_bookings'),
-    path('menu/', get_menu, name='get_menu')
+    path('menu/', get_menu, name='get_menu'),
+    path('cancel_booking/<int:entry_id>/', cancel_booking, name='cancel_booking')
 ]
 

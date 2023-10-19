@@ -1,0 +1,12 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+
+<h1>Confirm Cancellation</h1>
+<p>Are you sure you want cancel this booking?</p>
+<form method="post">
+    {% csrf_token %}
+    <input class='btn btn-danger'type="submit" value="Delete">
+</form>
+
+{% endblock %}
