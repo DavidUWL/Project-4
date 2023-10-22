@@ -63,6 +63,22 @@ def cancel_booking(request, entry_id):
     entry = get_object_or_404(Reservation, pk=entry_id)
 
     if request.method == 'POST':
-        entry.delete()
-        return redirect('get_bookings')
+        if form.is_valid():
+            entry.delete()
+            return redirect('get_bookings')
     return render(request, 'cancel_booking/cancel_booking.html', {'entry': entry})
+
+
+def amend_booking(request, entry_id):
+    entry = get_object_or_404(Reservation, pk=entry_id)
+
+    if request.method == 'POST':
+        form = ReserveForm(request.POST, instance=entry)
+        form.save()
+        return redirect('get_bookings')
+
+    else:
+        form = ReserveForm(instance=entry)
+
+    return render(request, 'amend_booking/amend_booking.html', {'form': form})
+

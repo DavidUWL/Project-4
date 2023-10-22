@@ -26,6 +26,7 @@ urlpatterns = [
     path('reservetable/', reserve_table, name='reservetable'),
     path('viewbookings/', get_bookings, name='get_bookings'),
     path('menu/', get_menu, name='get_menu'),
-    path('cancel_booking/<int:entry_id>/', cancel_booking, name='cancel_booking')
+    path('cancel_booking/<int:entry_id>/', cancel_booking, name='cancel_booking'),
+    path('amend_booking/<int:entry_id>/', amend_booking, name='amend_booking')
 ]
 

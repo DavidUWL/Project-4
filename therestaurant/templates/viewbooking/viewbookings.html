@@ -1,27 +1,31 @@
 {% extends "home/home.html" %}
 
 {% block content %}
-
-<table class="table opacity-75"> 
-    <thead>
-        <th scope="col" >#</th>    
-        <th scope="col" >Date</th>
-        <th scope="col" >Time</th>
-        <th scope="col" >Covers</th>
-        <th scope="col" >cancel?</th>
-    </thead>
-    <tbody>
-        {% for booking in user_bookings %}
-        <tr>
-            <th class="row">{{ booking.id }}</th>
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.time }}</td>
-            <td>{{ booking.covers }}</td>
-            <td><a href="{% url 'cancel_booking' booking.id %}">Cancel</a></td>
+<!-- <div class="table-responsive"> -->
+    <table class="table table-success table-striped table-hover opacity-75"> 
+        <thead>
+            <tr>
+                <th scope="col">#</th>    
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Covers</th>
+                <th scope="col">Cancel</th>
+                <th scope="col">Amend</th>
         </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+        </thead>
+        <tbody>
+            {% for booking in user_bookings %}
+            <tr>
+                <td>{{ booking.id }}</th>
+                <td>{{ booking.date }}</td>
+                <td>{{ booking.time }}</td>
+                <td>{{ booking.covers }}</td>
+                <td><button class="btn btn-danger"><a href="{% url 'cancel_booking' booking.id %}" class="text-decoration-none">Cancel</a></button></td>
+                <td><button class="btn btn-warning"><a href="{% url 'amend_booking' booking.id %}" class="text-decoration-none">Amend</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<!-- </div> -->
 {% endblock %}
 
