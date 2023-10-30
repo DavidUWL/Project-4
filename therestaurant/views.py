@@ -52,7 +52,7 @@ def reserve_table(request):
 # Where user views their own bookings when authenticated
 def get_bookings(request):
     user_bookings = Reservation.objects.filter(user=request.user)
-    today = date.today()
+    today = date.today() 
     return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings, 'today': today})
 
 
@@ -84,7 +84,3 @@ def amend_booking(request, entry_id):
 
     return render(request, 'amend_booking/amend_booking.html', {'form': form})
 
-
-def convert_to_date_object(date):
-    date_object = datetime.strptime(date, '%Y-%m-%d').date()
-    return date_object
