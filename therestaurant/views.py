@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from therestaurant.forms import ReserveForm
 from .models import Reservation, Table, Menu
-
+from datetime import *
 
 def get_homepage(request):
     return render(request, 'home/home.html')
@@ -48,10 +48,12 @@ def reserve_table(request):
 
     return render(request, 'reservetable/reservetable.html', {'form': form})
 
+
 # Where user views their own bookings when authenticated
 def get_bookings(request):
     user_bookings = Reservation.objects.filter(user=request.user)
-    return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings})
+    today = date.today()
+    return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings, 'today': today})
 
 
 def get_menu(request):
@@ -82,3 +84,7 @@ def amend_booking(request, entry_id):
 
     return render(request, 'amend_booking/amend_booking.html', {'form': form})
 
+
+def convert_to_date_object(date):
+    date_object = datetime.strptime(date, '%Y-%m-%d').date()
+    return date_object
