@@ -12,12 +12,12 @@ class ReserveForm(ModelForm):
     ]
 
     TIME_CHOICES = [
-        (1700, '17:00'),
-        (1800, '18:00'),
-        (1900, '19:00'),
-        (2000, '20:00'),
-        (2100, '21:00'),
-        (2200, '22:00'),
+        ('17:00', '17:00'),
+        ('18:00', '18:00'),
+        ('19:00', '19:00'),
+        ('20:00', '20:00'),
+        ('21:00', '21:00'),
+        ('22:00', '22:00'),
     ]
 
     covers = forms.ChoiceField(
@@ -25,6 +25,14 @@ class ReserveForm(ModelForm):
         widget=forms.Select(attrs={
             'class': 'form-control',
             'required': True}),
+    )
+
+    time = forms.ChoiceField(
+        choices=TIME_CHOICES,
+        widget=forms.Select(attrs={
+            'class': 'form-control',
+            'required': True,
+        })
     )
 
     class Meta:
@@ -37,7 +45,7 @@ class ReserveForm(ModelForm):
             'email': forms.EmailInput(attrs={'class': 'form-control', "required": True}),
             'contact_number': forms.NumberInput(attrs={'type': 'tel', 'class': 'form-control', "required": True}),
             'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control', "required": True}),
-            'time': forms.TimeInput(attrs={'type': 'btn', 'class': 'form-control', "required": True}),
+            # 'time': forms.TimeInput(attrs={'type': 'btn', 'class': 'form-control', "required": True}),
             # 'covers': forms.Select(attrs={'class': 'form-control'}),
         }
 
