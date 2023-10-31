@@ -1,5 +1,9 @@
 body {
-    /* background-color: black; */
+    color: azure;
+}
+
+main {
+    padding-top: 80px;
 }
 
 .hero {
@@ -27,4 +31,8 @@ i {
 
 #id_time div {
     display: inline-block;
+}
+
+.dropdown-menu {
+    z-index: 999;
 }
