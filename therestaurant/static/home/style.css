@@ -1,15 +1,21 @@
 body {
-    color: azure;
+    color: #461f0f;
+    font-family: 'Playfair Display', serif;
 }
 
 main {
     padding-top: 80px;
+    
 }
 
 .hero {
     background: url('images/home_hero.jpg') no-repeat center center;
     background-size: cover;
     min-height: 100vh;
+}
+
+.cta {
+    display: flex;
 }
 
 @media (min-width: 425px) {
@@ -31,8 +37,4 @@ i {
 
 #id_time div {
     display: inline-block;
-}
-
-.dropdown-menu {
-    z-index: 999;
 }
