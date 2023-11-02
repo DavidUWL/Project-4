@@ -10,23 +10,28 @@
 </form>
 
 {% else %}
-<div class="container">
-    <div class="row">
-        <div class="col display-2">
-            Please sign in to make a reservation.
-        </div>
-        <div class="row">
-            <div class="col-2">
-                <a class="btn btn-success justify-content-center" href="{% url 'account_signup' %}">
-                    register
-                </a>
-        </div>
-
-        </div>
-        
-        
-    </div>
+<div class="jumbotron bg-secondary">
+    <h1 class="display-4"> Please sign in to make a reservation.</h1>
+    <hr class="my-4">
+    <p>Or Register below to make your reservation.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'account_login' %}" role="button">Login</a>
+        <a class="btn btn-info btn-lg" href="{% url 'account_signup' %}" role="button">SignUp</a>
+    </p>
 </div>
 {% endif %}
 
 {% endblock %}
+
+
+<div class="container-fluid bg-dark text-light p-5 text-sm-center" id="jumbotron">
+    <div class="container bg-dark p-5">
+        <h1 class="display-4"> Please sign in to make a reservation.</h1>
+        <hr class="my-4">
+        <p>Or Register below to make your reservation.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'account_login' %}" role="button">Login</a>
+            <a class="btn btn-info btn-lg" href="{% url 'account_signup' %}" role="button">SignUp</a>
+        </p>
+    </div>
+</div>

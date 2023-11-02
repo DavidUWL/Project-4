@@ -1,5 +1,5 @@
 body {
-    color: #461f0f;
+    color: #ffffff;
     font-family: 'Playfair Display', serif;
 }
 
@@ -12,6 +12,7 @@ main {
     background: url('images/home_hero.jpg') no-repeat center center;
     background-size: cover;
     min-height: 100vh;
+    position: fixed;
 }
 
 .cta {
@@ -37,4 +38,15 @@ i {
 
 #id_time div {
     display: inline-block;
+}
+
+#Reservation_register {
+    justify-content: center;
+}
+
+#jumbotron {
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--bs-light);
+    border-radius: .3rem;  
 }
