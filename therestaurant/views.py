@@ -20,6 +20,8 @@ def get_available_table(selected_date, selected_time, covers):
 
     return None  # No available table found
 
+def reserve_success(request): 
+    return render(request, 'reserve_success/reserve_success.html')
 
 # Allows user to make a reservation 
 def reserve_table(request):
@@ -39,9 +41,9 @@ def reserve_table(request):
                 reservation.table = selected_table
                 reservation.save()
 
-                return redirect('reservetable')
+                return redirect('reserve_success')
             else:
-                error_message = "No available tables for the selected time and ddcovers."
+                error_message = "No available tables for the selected time and covers."
                 return render(request, 'reservetable', {'form': form, 'error_message': error_message})
     else:
         form = ReserveForm()

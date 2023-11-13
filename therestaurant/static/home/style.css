@@ -1,5 +1,5 @@
 body {
-    color: #ffffff;
+    color: #cd9400;
     font-family: 'Playfair Display', serif;
 }
 
@@ -11,8 +11,8 @@ main {
 .hero {
     background: url('images/home_hero.jpg') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
-    position: fixed;
 }
 
 .cta {

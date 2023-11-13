@@ -2,32 +2,20 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-
-<form method="POST" action="{% url 'reservetable' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit" class="btn btn-success">Submit</button>
-</form>
-
-{% else %}
-<div class="jumbotron bg-secondary">
-    <h1 class="display-4"> Please sign in to make a reservation.</h1>
-    <hr class="my-4">
-    <p>Or Register below to make your reservation.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="{% url 'account_login' %}" role="button">Login</a>
-        <a class="btn btn-info btn-lg" href="{% url 'account_signup' %}" role="button">SignUp</a>
-    </p>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <form method="POST" action="{% url 'reservetable' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
 </div>
-{% endif %}
-
-{% endblock %}
-
-
-<div class="container-fluid bg-dark text-light p-5 text-sm-center" id="jumbotron">
-    <div class="container bg-dark p-5">
+{% else %}
+<div class="container-fluid">
+    <div class="col-md-4">
         <h1 class="display-4"> Please sign in to make a reservation.</h1>
-        <hr class="my-4">
+        <hr class=" my-4">
         <p>Or Register below to make your reservation.</p>
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="{% url 'account_login' %}" role="button">Login</a>
@@ -35,3 +23,7 @@
         </p>
     </div>
 </div>
+{% endif %}
+
+{% endblock %}
+

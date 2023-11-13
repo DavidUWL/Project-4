@@ -1,0 +1,16 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="col-md-4">
+        <h1 class="display-4"> Thank You.</h1>
+        <hr class=" my-4">
+        <p>click the button below to view your recent booking.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'get_bookings' %}" role="button">Bookings</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
