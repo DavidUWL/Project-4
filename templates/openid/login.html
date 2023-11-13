@@ -8,8 +8,8 @@
 
 <h1>{% trans 'OpenID Sign In' %}</h1>
 
-<div class="container-fluid">
-    <div class="row">
+<div class=" col-4 container-fluid">
+    <div class="col-4">
         <div class="col-4">
             <form id="openid_login_form" class="openid_login" method="post" action="{% url 'openid_login' %}">
                 {% csrf_token %}
