@@ -3,8 +3,6 @@ from .models import Reservation
 from .models import Menu
 
 
-# Register your models here.
-
 @admin.register(Reservation)
 class PersonAdmin(admin.ModelAdmin):
     pass

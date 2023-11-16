@@ -1,9 +1,12 @@
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
+dj-database-url==0.5.0
 Django==4.2.4
 django-allauth==0.55.2
 django-money==3.3.0
+gunicorn==21.2.0
 oauthlib==3.2.2
+psycopg2-binary==2.9.9
 py-moneyed==3.0
 PyJWT==2.8.0
 python-decouple==3.8

@@ -37,7 +37,7 @@ def reserve_table(request):
 
             if selected_table:
                 reservation = form.save(commit=False)
-                reservation.user = request.user
+                reservation.user = request.user 
                 reservation.table = selected_table
                 reservation.save()
 

@@ -66,6 +66,8 @@ class ReservationViewTests(TestCase):
 #     def setUp(self):
 #         self.user = User.objects.create_user(username='testuser', password='testpassword')
 
+
+
 #     def test_url_status(self):
 #         self.client.login(username='testuser', password='testpassword')
 
@@ -73,7 +75,10 @@ class ReservationViewTests(TestCase):
 #             if not hasattr(url, 'name') or url.name is None: 
 #                 continue 
 
-#             url = reverse(url.name)
+#             if len(url.pattern.groups) > 0:
+#                 url = reverse(url.name, args=[1])
+#             else: 
+#                 url= reverse(url.name)
 #             response = self.client.get(url)
 #             self.assertEqual(response.status_code, 200, f"Failed with URL: {url}")
 
