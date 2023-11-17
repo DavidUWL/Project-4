@@ -15,7 +15,7 @@ from decouple import config
 import os
 import dj_database_url
 
-development = os.environ.get('development', false)
+development = os.environ.get('DEVELOPMENT', False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,10 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io', 'https://*.127.0.0.1']
+if DEBUG:
+    ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
+    CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io', 'https://*.127.0.0.1']
+else: 
+    ALLOWED_HOSTS = [os.environ.get('heroku_hostname')]
 
 # Application definition
 
@@ -92,9 +95,19 @@ WSGI_APPLICATION = 'project_4.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse(config('DATABASE_URL'))
-}
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+else: 
+    DATABASES = {
+        'default': dj_database_url.parse(config('DATABASE_URL'))
+    }
 
 
 # Password validation
@@ -134,7 +147,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = "Project-4/therestaurant/static"
+# STATIC_ROOT = BASE_DIR
+# STATICFILES_DIRS = [
+#     'therestaurant/static',  
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
