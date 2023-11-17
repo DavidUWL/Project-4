@@ -19,6 +19,7 @@ development = os.environ.get('DEVELOPMENT', False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,13 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
     CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io', 'https://*.127.0.0.1']
 else: 
-    ALLOWED_HOSTS = ['therestaurant-ec18b29952b2.herokuapp.com']
+    ALLOWED_HOSTS = ['https://therestaurant-ec18b29952b2.herokuapp.com/']
 
 # Application definition
 
@@ -48,7 +49,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'therestaurant',
     'djmoney'
 ]
@@ -103,7 +106,6 @@ if DEBUG:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 else: 
     DATABASES = {
         'default': dj_database_url.parse(config('DATABASE_URL'))
@@ -147,10 +149,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR
-# STATICFILES_DIRS = [
-#     'therestaurant/static',  
-# ]
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
