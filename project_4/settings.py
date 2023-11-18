@@ -28,11 +28,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
-    ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
-    CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io', 'https://*.127.0.0.1']
+    ALLOWED_HOSTS = ['therestaurant-ec18b29952b2.herokuapp.com']
+    CSRF_TRUSTED_ORIGINS = ['https://therestaurant-ec18b29952b2.herokuapp.com']
+    # ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
+    # CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io', 'https://*.127.0.0.1']
 else: 
     ALLOWED_HOSTS = ['therestaurant-ec18b29952b2.herokuapp.com']
     CSRF_TRUSTED_ORIGINS = ['https://therestaurant-ec18b29952b2.herokuapp.com']
@@ -101,14 +103,17 @@ WSGI_APPLICATION = 'project_4.wsgi.application'
 
 if DEBUG:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
 else: 
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(config('DATABASE_URL'))
     }
 
 
