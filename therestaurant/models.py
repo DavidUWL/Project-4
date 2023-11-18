@@ -29,8 +29,8 @@ class Reservation(models.Model):
     covers = models.IntegerField(null=False, blank=False)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=get_default_table)
 
-    def __str__(self):
-        return f"{self.date} {self.time}" 
+    # def __str__(self):
+    #     return f"{self.date} {self.time}" 
 
 
 class Menu(models.Model):
