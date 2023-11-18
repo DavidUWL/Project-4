@@ -28,7 +28,7 @@ def reserve_table(request):
     if request.method == 'POST':
         form = ReserveForm(request.POST)
         if form.is_valid():
-            
+            print('form is valid')
             selected_date = form.cleaned_data['date']
             selected_time = form.cleaned_data['time']
             covers = form.cleaned_data['covers']
@@ -43,6 +43,7 @@ def reserve_table(request):
 
                 return redirect('reserve_success')
             else:
+                print('form is not valid')
                 error_message = "No available tables for the selected time and covers."
                 return render(request, 'reservetable/reservetable.html', {'form': form, 'error_message': error_message})
     else:
