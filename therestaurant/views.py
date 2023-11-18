@@ -44,10 +44,11 @@ def reserve_table(request):
 
                 return redirect('reserve_success')
             else:
-                print('form is not valid')
+                print('form is not valid stage-1')
                 error_message = "No available tables for the selected time and covers."
                 return render(request, 'reservetable/reservetable.html', {'form': form, 'error_message': error_message})
     else:
+        print('form is not valid stage-2')
         form = ReserveForm()
 
     return render(request, 'reservetable/reservetable.html', {'form': form})
