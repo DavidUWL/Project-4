@@ -9,7 +9,7 @@ main {
 }
 
 .hero {
-    background: url('media/home_hero.jpg') no-repeat center center;
+    background: url('images/home_hero.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
