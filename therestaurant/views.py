@@ -44,7 +44,7 @@ def reserve_table(request):
                 return redirect('reserve_success')
             else:
                 error_message = "No available tables for the selected time and covers."
-                return render(request, 'reservetable', {'form': form, 'error_message': error_message})
+                return render(request, 'reservetable/reservetable.html', {'form': form, 'error_message': error_message})
     else:
         form = ReserveForm()
 
