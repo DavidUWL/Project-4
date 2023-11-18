@@ -35,6 +35,7 @@ if DEBUG:
     CSRF_TRUSTED_ORIGINS = ['https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io', 'https://*.127.0.0.1']
 else: 
     ALLOWED_HOSTS = ['therestaurant-ec18b29952b2.herokuapp.com']
+    CSRF_TRUSTED_ORIGINS = ['https://therestaurant-ec18b29952b2.herokuapp.com']
 
 # Application definition
 
