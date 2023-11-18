@@ -28,7 +28,7 @@ def reserve_table(request):
     if request.method == 'POST':
         form = ReserveForm(request.POST)
         if form.is_valid():
-            print('form is valid')
+            print('form is valid step-1')
             selected_date = form.cleaned_data['date']
             selected_time = form.cleaned_data['time']
             covers = form.cleaned_data['covers']
@@ -36,6 +36,7 @@ def reserve_table(request):
             selected_table = get_available_table(selected_date, selected_time, covers)
 
             if selected_table:
+                print('form is valid step-2')
                 reservation = form.save(commit=False)
                 reservation.user = request.user 
                 reservation.table = selected_table
