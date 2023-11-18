@@ -23,11 +23,14 @@ class Reservation(models.Model):
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(null=False, blank=False)
-    contact_number = models.IntegerField(null=False, blank=False)
+    contact_number = models.CharField(null=False, blank=False)
     date = models.DateField(null=False, blank=False)
     time = models.TimeField(null=False, blank=False)
     covers = models.IntegerField(null=False, blank=False)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=get_default_table)
+
+    def __str__(self):
+        return f"{self.date} {self.time}" 
 
 
 class Menu(models.Model):
