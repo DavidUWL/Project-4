@@ -23,12 +23,11 @@ def get_available_table(selected_date, selected_time, covers):
 def reserve_success(request): 
     return render(request, 'reserve_success/reserve_success.html')
 
-# Allows user to make a reservation 
+
 def reserve_table(request):
     if request.method == 'POST':
         form = ReserveForm(request.POST)
         if form.is_valid():
-            print('form is valid step-1')
             selected_date = form.cleaned_data['date']
             selected_time = form.cleaned_data['time']
             covers = form.cleaned_data['covers']
@@ -36,25 +35,21 @@ def reserve_table(request):
             selected_table = get_available_table(selected_date, selected_time, covers)
 
             if selected_table:
-                print('form is valid step-2')
                 reservation = form.save(commit=False)
                 reservation.user = request.user 
                 reservation.table = selected_table
                 reservation.save()
-
                 return redirect('reserve_success')
+                
             else:
-                print('form is not valid stage-1')
                 error_message = "No available tables for the selected time and covers."
                 return render(request, 'reservetable/reservetable.html', {'form': form, 'error_message': error_message})
     else:
-        print('form is not valid stage-2')
         form = ReserveForm()
 
     return render(request, 'reservetable/reservetable.html', {'form': form})
 
 
-# Where user views their own bookings when authenticated
 def get_bookings(request):
     user_bookings = Reservation.objects.filter(user=request.user)
     today = date.today() 
@@ -70,9 +65,8 @@ def cancel_booking(request, entry_id):
     entry = get_object_or_404(Reservation, pk=entry_id)
 
     if request.method == 'POST':
-        if form.is_valid():
-            entry.delete()
-            return redirect('get_bookings')
+        entry.delete()
+        return redirect('get_bookings')
     return render(request, 'cancel_booking/cancel_booking.html', {'entry': entry})
 
 

@@ -15,11 +15,6 @@ main {
     min-height: 100vh;
 }
 
-
-.cta {
-    display: flex;
-}
-
 @media (min-width: 425px) {
 
     .hero {
@@ -27,29 +22,6 @@ main {
         align-items: center;
     }
 
-}
-
-/* footer */
-
-i {
-    font-size: 3em;
-    text-decoration: none;
-    color: #cd9400;
-}
-
-#id_time div {
-    display: inline-block;
-}
-
-#Reservation_register {
-    justify-content: center;
-}
-
-#jumbotron {
-    padding: 4rem 2rem;
-    margin-bottom: 2rem;
-    background-color: var(--bs-light);
-    border-radius: .3rem;
 }
 
 @media (max-width: 426px) {
@@ -60,3 +32,12 @@ i {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 }
+
+/* footer */
+
+i {
+    font-size: 3em;
+    text-decoration: none;
+    color: #cd9400;
+}
+
