@@ -10,7 +10,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
+TESTING = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
@@ -77,9 +78,17 @@ WSGI_APPLICATION = 'project_4.wsgi.application'
 
 
 if DEBUG:
-    DATABASES = {
-        'default': dj_database_url.parse(config('DATABASE_URL'))
-    }
+    if TESTING:
+        DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+    else:
+        DATABASES = {
+            'default': dj_database_url.parse(config('DATABASE_URL'))
+        }
 else: 
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))

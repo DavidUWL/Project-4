@@ -3,6 +3,8 @@ from django.urls import reverse
 from project_4.urls import urlpatterns
 from therestaurant.models import *
 
+# SET "TESTING = True" in settings.py when testing. 
+
 class ReservationQuerySetTests(TestCase):
     def setUp(self):
         self.table1 = Table.objects.create(table_number=1, table_covers=2)
@@ -62,23 +64,4 @@ class ReservationViewTests(TestCase):
         self.assertEqual(Reservation.objects.count(), 1)
 
 
-# class TestUrlPatterns(TestCase):
-#     def setUp(self):
-#         self.user = User.objects.create_user(username='testuser', password='testpassword')
-
-
-
-#     def test_url_status(self):
-#         self.client.login(username='testuser', password='testpassword')
-
-#         for url in urlpatterns:
-#             if not hasattr(url, 'name') or url.name is None: 
-#                 continue 
-
-#             if len(url.pattern.groups) > 0:
-#                 url = reverse(url.name, args=[1])
-#             else: 
-#                 url= reverse(url.name)
-#             response = self.client.get(url)
-#             self.assertEqual(response.status_code, 200, f"Failed with URL: {url}")
 

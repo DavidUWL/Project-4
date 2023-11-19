@@ -1,6 +1,12 @@
 from django.forms import ModelForm
 from django import forms
 from .models import Reservation
+from django.forms.widgets import DateInput
+from datetime import date
+
+class ReturnFutureDates(DateInput):
+    def __init__(self, attrs=None):
+        super().__init__(attrs={'min': date.today().strftime('%Y-%m-%d'), **(attrs or {})})
 
 
 class ReserveForm(ModelForm):
@@ -44,7 +50,7 @@ class ReserveForm(ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control', "required": True}),
             'email': forms.EmailInput(attrs={'class': 'form-control', "required": True}),
             'contact_number': forms.NumberInput(attrs={'type': 'tel', 'class': 'form-control', "required": True}),
-            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control', "required": True}),
+            'date': ReturnFutureDates(attrs={'type': 'date', 'class': 'form-control', "required": True}),
             # 'time': forms.TimeInput(attrs={'type': 'btn', 'class': 'form-control', "required": True}),
             # 'covers': forms.Select(attrs={'class': 'form-control'}),
         }
