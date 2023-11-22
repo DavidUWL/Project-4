@@ -51,7 +51,5 @@ class ReserveForm(ModelForm):
             'email': forms.EmailInput(attrs={'class': 'form-control', "required": True}),
             'contact_number': forms.NumberInput(attrs={'type': 'tel', 'class': 'form-control', "required": True}),
             'date': ReturnFutureDates(attrs={'type': 'date', 'class': 'form-control', "required": True}),
-            # 'time': forms.TimeInput(attrs={'type': 'btn', 'class': 'form-control', "required": True}),
-            # 'covers': forms.Select(attrs={'class': 'form-control'}),
         }
 
