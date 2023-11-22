@@ -30,14 +30,13 @@ class ReserveForm(ModelForm):
         choices=COVERS_CHOICES,
         widget=forms.Select(attrs={
             'class': 'form-control',
-            'required': True}),
+            }),
     )
 
     time = forms.ChoiceField(
         choices=TIME_CHOICES,
         widget=forms.Select(attrs={
             'class': 'form-control',
-            'required': True,
         })
     )
 
