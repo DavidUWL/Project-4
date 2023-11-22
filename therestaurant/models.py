@@ -9,7 +9,7 @@ class Table(models.Model):
     table_covers = (models.IntegerField())
 
     def __str__(self):
-        return f"Table {self.table_number}" 
+        return f"Table {self.table_number}"
 
 
 def get_default_table():
@@ -36,7 +36,7 @@ class Reservation(models.Model):
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=get_default_table)
 
     def __str__(self):
-        return f"{self.date} | {self.time} | {self.table}" 
+        return f"{self.date} | {self.time} | {self.table}"
 
 
 class Menu(models.Model):

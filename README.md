@@ -1,7 +1,7 @@
 # Project 4 - The Restaurant 
 ![Banner that says "It's not just about food."](therestaurant/static/home/images/README/banner.png)
 
-The Restaurant is a ficticious restaurant page created using the Django Framework, Python, HTML and CSS/bootstrap. 
+The Restaurant is a fictitious restaurant page created using the Django Framework, Python, HTML, and CSS/bootstrap. 
 ### View the site - [The Restaurant](https://therestaurant-ec18b29952b2.herokuapp.com/)
 <br>
 
@@ -30,7 +30,7 @@ The Restaurant is a ficticious restaurant page created using the Django Framewor
 
 ## User Experience (UX)
 ### Initial Discussion
-The restaurants website was created for online presence, but more importantly - to allow customers to book a table and view the menu. This needed to be quick and easy for the user - only requiring a quick signup and to fill out their booking details. 
+The restaurant's website was created for online presence, but more importantly - to allow customers to book a table and view the menu. This needed to be quick and easy for the user - only requiring a quick signup and to fill out their booking details. 
  
 
 ### User Stories
@@ -41,25 +41,23 @@ If the README does not open, it can be located with the image below.
 ![README button location](therestaurant/static/home/images/README/story_board.png) 
 
 
-
 ## Design
-With restaurant website designs, minimalist designs typically work best. Visually striking imagery with minimal text usually provides streamlined user experiences and give an elegance to the page. Using the Django Framework, all pages will be an extension of the homepage and as such have consistency. 
+With restaurant website designs, minimalist designs typically work best. Visually striking imagery with minimal text usually provides streamlined user experiences and gives elegance to the page. Using the Django Framework, all pages will be an extension of the homepage and as such have consistency. 
 
 ## Wireframes
 
-
 ### Homepage
 ![Home Page Wireframe](therestaurant/static/home/images/README/home_page.png) <br>
-* With the homepage above, i wanted a large striking hero image with strong colours to set the tone for the website. With a short succinct lead line and tagline for the customer to remember. A call to action below this to book a table. 
-A navbar above containing the brand that will link to the homepage. The navbar will expand on mobile into a dropdown. A footer at the bottom of the page that simply links to the restaurants socials. The homepage's structure also lends itself to other uses, like confirming a users booking, or logging in/logging out. 
+* With the homepage above, I wanted a large striking hero image with strong colours to set the tone for the website. With a short succinct lead line and tagline for the customer to remember. A call to action below this to book a table. 
+A navbar above containing the brand that will link to the homepage. The navbar will expand on mobile into a dropdown. A footer at the bottom of the page that simply links to the restaurant's socials. The homepage's structure also lends itself to other uses, like confirming a user's booking, or logging in/logging out. 
 
 ### Book Table
 ![Book Table Wireframe](therestaurant/static/home/images/README/book_table.png)
-* With the book table page, there is simply one call to action here, the booking form. A streamlined booking page lends itself to the user not being distracted by any other on screen details and focus on the task at hand. 
+* With the book table page, there is simply one call to action here, the booking form. A streamlined booking page lends itself to the user not being distracted by any other on-screen details and focusing on the task at hand. 
 
 ### View Bookings
 ![view bookings wireframe](therestaurant/static/home/images/README/view_bookings.png)
-* The view bookings page will return a list of the users bookings and render them within a table. on the right of this, there will be two buttons that will allow the user to cancel or amend their booking. With mobile, this will be responsive and scrollable. 
+* The view bookings page will return a list of the user's bookings and render them within a table. on the right of this, there will be two buttons that will allow the user to cancel or amend their booking. With mobile, this will be responsive and scrollable. 
 
 ### Menu 
 ![Menu Wireframe](therestaurant/static/home/images/README/Menu.png)
@@ -82,7 +80,7 @@ _For more information on the User table/objects please refer to the_ [AllAuth Do
 ## Typography 
 The
 [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=playfair+display)
-Google Font was used for the text in this project, suiting the minimalist design with its straight edging and thicker style. Relying on a standard Serif font as a backup if the google font becomes unavailable. 
+Google Font was used for the text in this project, suiting the minimalist design with its straight edging and thicker style. Relying on a standard Serif font as a backup if the Google font becomes unavailable. 
 
 ## Features By Page
 
@@ -91,21 +89,21 @@ Google Font was used for the text in this project, suiting the minimalist design
 ![Dynamic nav bar logout](therestaurant/static/home/images/README/logout.png)
 ![Dynamic nav bar mobile](therestaurant/static/home/images/README/logout_mobile.png)
 
-* The home pages Navbar is dynamic based on the login state of the user. Users will not be able to view their bookings until they are authenticated. 
+* The home page's Navbar is dynamic based on the login state of the user. Users will not be able to view their bookings until they are authenticated. 
 <hr>
 
-### booking a Table
+### Booking a Table
 ![Book table page](therestaurant/static/home/images/README/book_live_login.png)
 ![Booking form desktop](therestaurant/static/home/images/README/book_live.png)
 ![booking form mobile](therestaurant/static/home/images/README/book_live_mobile.png)
 * The Reservation page is dynamic depending on the authentication state, if the user is not logged in, they will be prompted to either login or register. Once they are authenticated, they will be redirected to the homepage and will receive the "Book Table" call to action.
-* Once authenticated, the user is prompted with their booking form.This consists of the standard fields which includes a calendar popout for the date field and dropdowns for the times and covers. 
+* Once authenticated, the user is prompted with their booking form. This consists of the standard fields which include a calendar popout for the date field and dropdowns for the times and covers. 
 <hr>
 
 ### Viewing the Menu
 ![Menu Desktop](therestaurant/static/home/images/README/menu_live.png)
 ![Menu mobile](therestaurant/static/home/images/README/menu_live_mobile.png)
-* The menu will render and will be responsive on mobile. Although this is data from a database, i wanted this to be as close to a menu's looks while being simple. 
+* The menu will render and will be responsive on mobile. Although this is data from a database, I wanted this to be as close to a menu's looks while being simple. 
 <hr>
 
 ### Viewing User Bookings
@@ -113,13 +111,13 @@ Google Font was used for the text in this project, suiting the minimalist design
 ![User bookings mobile](therestaurant/static/home/images/README/view_bookings_mobile.png)
 * The view bookings panel can only be accessed when authenticated, users can cancel their associated booking or amend the details contained in it. 
 * Depending on viewports, the table will be horizontally scrollable for accessibility. 
-* If the date is in the past (If the date is before todays date EG : booking was made for 11/11/2023 vs viewing on 12/11/2023), the cancel/amend buttons will be disabled. 
+* If the date is in the past (If the date is before today's date EG: booking was made for 11/11/2023 vs viewing on 12/11/2023), the cancel/amend buttons will be disabled. 
 <hr>
 
 ### Admin Panel - Reservations
 ![admin panel reservation](therestaurant/static/home/images/README/admin_panel_reservations.png)
 ![admin panel reservation single](therestaurant/static/home/images/README/admin_panel_reservation_single.png)
-* Within the admin panel, the admin will be able to manage their bookings. All bookings will be returned within the "Reservations" panel. When a booking is made, there is logic that will select a table based on avilability and assign it with the booking. 
+* Within the admin panel, the admin will be able to manage their bookings. All bookings will be returned within the "Reservations" panel. When a booking is made, there is logic that will select a table based on availability and assign it to the booking. 
 * The reservations will be returned with the date, time, and table as their name. 
 * Changes can be made to the reservation here by the admin if required. 
   * As a secondary note, the Menu Items can also be modified within their respective admin 
@@ -172,13 +170,15 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('Successfully created 10 Table objects.'))
 ```
 
-* A management command was created that would allow the restaurant to modify their tables number and covers as needed for the table automation. 
+* A management command was created that would allow the restaurant to modify their table number and covers as needed for the table automation. 
 <hr>
 
 ### Future Implentations
-* For this project, as emails were made optional for signup, i deemed the email booking as not having enough value to implement on this epic. However i do want to implement this in the future and make validated emails mandatory on signup.
+* For this project, as emails were made optional for signup, i deemed the email booking as not having enough value to implement on this epic. However, i do want to implement this in the future and make validated emails mandatory on signup.
 * I would like to refactor the table automation so that larger tables do not get occupied by small cover numbers EG 1 person at a table that could seat 4. 
 * I would like to redesign the navbar for mobile devices so that a sidebar overlay is used instead of a dropdown as some elements overlay over the dropdown nav element. 
+* I would like to create a seating system that uses the table objects as a primary key to create an all in one system that owner managers could use to have a granular view of their tables daily (similar to the restaurant's view in opentable). 
+* I Would like to implement some basic query functions in the admin panel that would allow the owner to query their reservations in the front end based on dynamic criteria EG: name, Date, covers ect. 
 
 ## Technologies Used
 
@@ -189,11 +189,11 @@ Languages HTML, CSS, Python.
   * Django Framework - A Full Stack Python web framework.
   * Bootstrap - A framework designed for responsive + rapid web design.
   * Jquery - A javascript library used for DOM manipulation. **
-  * Font awesome - A CDN For iconography.
+  * Font Awesome - A CDN For iconography.
   * AllAuth - Used for User authentication and registration.
-  * White Noise - used for deployment to heroku and serving static files. 
-  * Gunicorn - A python WSGI HTTP server that aids in deployment.
-  * psycopg2-binary - A postgreSQL adapter for python. 
+  * White Noise - used for deployment to Heroku and serving static files. 
+  * Gunicorn - A Python WSGI HTTP server that aids in deployment.
+  * psycopg2-binary - A postgreSQL adapter for Python. 
   * django-money - See below.
   * python-decouple - See below.
   * dj-database-url - For parsing the hosted SQL server URL. 
@@ -204,7 +204,7 @@ Languages HTML, CSS, Python.
 ### Package notes
 
 
-* [python-decouple](https://pypi.org/project/python-decouple/) was used during the developement of this project to experiment with the seperation of configuration settings and code. It also made it easier to carry out version control by having confidence that my environment variables were not exposed. 
+* [python-decouple](https://pypi.org/project/python-decouple/) was used during the development of this project to experiment with the separation of configuration settings and code. It also made it easier to carry out version control by having confidence that my environment variables were not exposed. 
 ```python
     else:
         DATABASES = {
@@ -212,7 +212,7 @@ Languages HTML, CSS, Python.
         }
 ```
 
-* [django-money](https://pypi.org/project/django-money/) is a cool package that allows distinct configuration for django model fields that will contain currencies. When the currency is defined, the corresponding symbol will render.  
+* [django-money](https://pypi.org/project/django-money/) is a cool package that allows distinct configuration for Django model fields that will contain currencies. When the currency is defined, the corresponding symbol will be rendered.  
   * This package also allows for records in the same column to return with multiple currency symbols which can be chosen from by simply importing the package.  
 
 ```python
@@ -229,7 +229,7 @@ price = MoneyField(max_digits=14, decimal_places=2, default_currency='EUR')
 * Github was used as a repository to store website files and code. <br>
 * Gitpod used as the coding environment with git for version control. <br>
 * Balsamic For wireframes. 
-* Google Dev tools for developement and testing responsiveness. 
+* Google Dev tools for development and testing responsiveness. 
 * [Figma](https://www.figma.com/files/recents-and-sharing?fuid=1308151216497747353) 
   for creating the Database Schema. 
 
@@ -247,7 +247,7 @@ The database can be created by the following: <br>
 #### Heroku Provided the web hosting for our application.
 The Heroku App can be created by the following: <br>
   1. From your Heroku Dashboard, click "new" in the top right and create a new app.
-  2. Give your App a unique name and click create app. 
+  2. Give your App a unique name and click Create App. 
   3. Once created, open the app settings and select config var - create a new variable called `DATABASE_URL` and give it the value of the ElephantSQL URL you copied in step 4 previously.
   
 #### Preparing your Workspace for Deployment
@@ -294,7 +294,7 @@ The Heroku App can be created by the following: <br>
   ```python
   web: gunicorn YOUR_APP_NAME.wsgi:application
   ``` 
-  13. Add the below code into your middleware config in settings.py to configure `whitenoise` and allow it to serve your static files to heroku: 
+  13. Add the below code into your middleware config in settings.py to configure `whitenoise` and allow it to serve your static files to Heroku: 
   ```python
   MIDDLEWARE = [
     # ...
@@ -306,7 +306,7 @@ The Heroku App can be created by the following: <br>
   STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
   ```
 
-  14. add the below code to your allowed hosts and modify the heroku URL to your deployed URL: 
+  14. add the below code to your allowed hosts and modify the Heroku URL to your deployed URL: 
   ```python
   if DEBUG:
     ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
@@ -331,10 +331,11 @@ To create a clone of this repository:
 
 
 ## Testing
-Testing for this project was ongoing throughout, Using predemoninantly manual testing in conjunction with Google Dev Tools emulating multiple viewports. Once the database had taken shape and logic was in place, unit testing was then implemented in parallel while developing continued.   
+Testing for this project was ongoing throughout, Using predominantly manual testing in conjunction with Google Dev Tools emulating multiple viewports. Once the database had taken shape and logic was in place, unit testing was then implemented in parallel while development continued.   
 
 ## Validation Testing 
 The W3C validator was used to validate all HTML pages on this site and also used to validate the CSS. 
+<hr> 
 
 ### HTML 
 
@@ -343,67 +344,74 @@ The W3C validator was used to validate all HTML pages on this site and also used
 | Home Page | Pass |     
 | View Booking | Pass |     
 | Amend Booking | Pass |    
-| Cancel Booking |    | 
-| Menu |      |       
-| Reserve Success |      |
+| Cancel Booking | pass | 
+| Menu | pass |       
+| Reserve Success | pass |
+| log in | pass |
 | Log Out | Pass | 
+| sign up | pass | 
+<hr>
 
 ### CSS 
 style.CSS file in static directory has passed W3C with no errors. 
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
 
-```python 
-    def prompt_new_game():
-        start_new_game = str(input("Would you like to play again? \n Y/N:").upper())
+### python
+All python code adheres to pep 8 standards. Some lines are viewed as too long, however stylistically they would be harder to read if not in a uniform code block or across multiple lines.
 
-        if start_new_game == "Y":
-            clear()
-            new_game()
-        elif start_new_game == "N":
-            sys.exit()
-        else:
-            prompt_new_game()
-```
-The above is a very low level recursive function, where if the player has not entered either expected input, it will call itself again. I found this an interesting way to implement validation, but if its use case involved multiple interactions i would deem it too dangerous due to its infinite loop nature. 
+## Automated Unit Testing
+Unit testing was used in this project once the database and the models were up and running. There is a variable in the `settings.py` file called `TESTING`, this value needs to be set to `True` in conjunction with `DEBUG` to run the tests on the SQLite database as the test will not run against the postgreSQL database due to external factors. 
+
+Unit tests can be found [here.](https://github.com/DavidUWL/Project-4/blob/main/therestaurant/tests.py)
+* The first test case: `ReservationQuerySetTests` simulates a table being assigned automatically when a form is submitted to test the `reserve_table()` function is working correctly. 
+* The second test case: `ReservationViewTest` simulates an authenticated user making a booking and verifies whether the reservation is written to the database correctly and redirects to the success page. 
 
 ### Solved Bugs
-* During the project a few bugs were encountered, namely: <br>
-  * When print f string literals, it was forgotten that i would need to add 1 to the printing of the computer generated artillery coordinates, as they were generated with zero indexing in mind.
-  * A large bug was identified where the board would not update to where player 2 would hit player 1's boats. This was due to a plot_coordinate() function call in the update_UI() function. This was placed so that the users input felt a bit snappier, however would overwrite any UI updates that would be pushed for hits. Once removed this bug was resolved. 
-  * A bug where validation was not being applied to the player2 name, this was due to player2 not being passed as an argument to the function. 
+* A bug was experienced when deploying to Heroku where the build wheels for the `backports.zoneinfo` package could not be built. A solution was given on [stack overflow](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta) by user [ayandebnath](https://stackoverflow.com/users/13618361/ayandebnath) to modify the requirements.txt file to include the line which resolved the issue:
+```python
+backports.zoneinfo;python_version<"3.9"
+```
 
-### Known Bugs
-* At the time of submission, i am not aware of any bugs present.  
+* A bug with the footer being pushed off the bottom of the page was encountered, this was being caused by incorrectly giving the container a class of table-responsive, which is not in use with bootstrap 5. 
+
+### known/unresolved bugs 
+* There is a known bug with specifically very small width viewports that causes the tables to push the footer off the end of the page by 80px depending on the amount of values entered. This is caused by the `main {padding-top: 80px;}` and will be resolved in a future release that refactors the navbar into a sidebar overlay. 
+
+### Complications
+Many complications were experienced when creating this project, whether it be with code or with the deployment itself. I would typically not deem complications a "bug" until the code has become live and deployed into the wild, prior to this - its simply unimplemented code. If the developer needs to move on, i can see the need for bug tracking at this point - however i did not experience any complications that took a substantial amount of time from the rest of the project. 
+
 
 ### Testing User Stories 
-
-#### First time Vistor
-* To quickly be able to play the game without knowing the rules.
-  * Players can quickly enter the game, as there are no rules to read, all inputs are prompted when needed with their application. 
-* For quick gameplay to be carried out, resulting in a fast-paced rewarding feeling when played. 
-  * Upon opening the game, all that is required are names and coordinates, the speed at which is is carried out solely depends on the player. 
-#### Returning Visitor
- * To be able to play a different game-set everytime - with the computer choosing different locations/artillery calls every game. 
-   * As player boats are chosen by the player and computer boats are placed randomly, the boardset will always be different. The computer will also pick random artillery coordinates for every game. 
-
-## Full testing
-Extensive manual testing was carried out to validate that all unexpected data types would be caught and reprompt the user for the correct data type, for example:
-* Integers as floating points.
-* inputs that were left empty as opposed to containing coordinates or names.
-* coordinates that were fired the same place twice, which cannot occur in the original game. 
-* Trying to stack boats on top of each other. 
-
-### Lintner
-All code passes through the Code Institute lintner with no errors, except for line length which is not deemed as excessive. 
+All user stories would require their tasks completed before testing their acceptance. 
+| #ID  | Acceptance | Notes if Required
+| :--- | :--- | :---: 
+|[#1](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=45210713) | PASS |
+|[#2](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884010) | PASS |
+|[#3](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884008) | PASS |
+|[#4](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884007) | PASS |
+|[#5](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884005) | PASS |
+|[#6](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884003) | not implemented | May be implemented in the future.
+|[#7](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884002) | PASS |
+|[#8](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37884000) | PASS | Owner can view all bookings in admin panel.
+|[#9](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37883995) | PASS |
+|[#10](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37883993) | PASS |
+|[#11](https://github.com/users/DavidUWL/projects/1?pane=issue&itemId=37883988) | PASS | Owner can modify each booking field in admin panel once a reservation is made.
 
 
 ## credits
 ### Content
-All content for this game was created and written by me - David Kirby.
+All content for this website was created by me - David Kirby. 
 
 ## Media
-[ASCII.co.uk](https://ascii.co.uk/art/battleship) ASCII for the ASCII banner.
+[Istockphoto for the homescreen/background image.](https://www.istockphoto.com/)
 
  
 ## Acknowledgments
 [Derek Mcauley](https://github.com/derekmcauley7) For his guidance as my Code Institute mentor. <br>
-[Kera cudmore](https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md) For her fantastic Readme Template.
+[Kera cudmore](https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md) For her fantastic README template.

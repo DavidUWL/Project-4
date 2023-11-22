@@ -11,4 +11,3 @@ class PersonAdmin(admin.ModelAdmin):
 @admin.register(Menu)
 class PersonAdmin(admin.ModelAdmin):
     pass
-

@@ -3,7 +3,8 @@ from django.urls import reverse
 from project_4.urls import urlpatterns
 from therestaurant.models import *
 
-# SET "TESTING = True" in settings.py when testing. 
+# SET "TESTING = True" in settings.py when testing.
+
 
 class ReservationQuerySetTests(TestCase):
     def setUp(self):
@@ -35,7 +36,7 @@ class ReservationQuerySetTests(TestCase):
         queryset = Reservation.objects.filter(table=self.table1)
         self.assertEqual(queryset.count(), 1)
 
-    
+
 class ReservationViewTests(TestCase):
     def setUp(self):
         self.table1 = Table.objects.create(table_number=1, table_covers=2)
@@ -56,12 +57,9 @@ class ReservationViewTests(TestCase):
         }
 
         self.client.login(username='testuser', password='testpassword')
-        url=reverse('reservetable')
-        expected_redirect_url = reverse('reserve_success') 
+        url = reverse('reservetable')
+        expected_redirect_url = reverse('reserve_success')
         response = self.client.post(url, data=form_data)
-        
+
         self.assertRedirects(response,  expected_url=expected_redirect_url)
         self.assertEqual(Reservation.objects.count(), 1)
-
-
-

@@ -3,7 +3,6 @@ from django.urls import path, include
 from therestaurant.views import *
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_homepage, name='get_homepage'),

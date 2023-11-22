@@ -3,6 +3,7 @@ from therestaurant.forms import ReserveForm
 from .models import Reservation, Table, Menu
 from datetime import *
 
+
 def get_homepage(request):
     return render(request, 'home/home.html')
 
@@ -13,14 +14,15 @@ def get_reservation(request):
 
 def get_available_table(selected_date, selected_time, covers):
     available_tables = Table.objects.filter(table_covers__gte=covers)
-    
+
     for table in available_tables:
         if not Reservation.objects.filter(table=table, date=selected_date, time=selected_time).exists():
             return table
 
     return None  # No available table found
 
-def reserve_success(request): 
+
+def reserve_success(request):
     return render(request, 'reserve_success/reserve_success.html')
 
 
@@ -31,16 +33,16 @@ def reserve_table(request):
             selected_date = form.cleaned_data['date']
             selected_time = form.cleaned_data['time']
             covers = form.cleaned_data['covers']
-   
+
             selected_table = get_available_table(selected_date, selected_time, covers)
 
             if selected_table:
                 reservation = form.save(commit=False)
-                reservation.user = request.user 
+                reservation.user = request.user
                 reservation.table = selected_table
                 reservation.save()
                 return redirect('reserve_success')
-                
+
             else:
                 error_message = "No available tables for the selected time and covers."
                 return render(request, 'reservetable/reservetable.html', {'form': form, 'error_message': error_message})
@@ -52,7 +54,7 @@ def reserve_table(request):
 
 def get_bookings(request):
     user_bookings = Reservation.objects.filter(user=request.user)
-    today = date.today() 
+    today = date.today()
     return render(request, 'viewbooking/viewbookings.html', {'user_bookings': user_bookings, 'today': today})
 
 
@@ -82,4 +84,3 @@ def amend_booking(request, entry_id):
         form = ReserveForm(instance=entry)
 
     return render(request, 'amend_booking/amend_booking.html', {'form': form})
-

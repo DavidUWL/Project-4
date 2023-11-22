@@ -4,6 +4,7 @@ from .models import Reservation
 from django.forms.widgets import DateInput
 from datetime import date
 
+
 class ReturnFutureDates(DateInput):
     def __init__(self, attrs=None):
         super().__init__(attrs={'min': date.today().strftime('%Y-%m-%d'), **(attrs or {})})
@@ -42,7 +43,7 @@ class ReserveForm(ModelForm):
 
     class Meta:
         model = Reservation
-        fields = ['first_name','last_name','email',
+        fields = ['first_name', 'last_name', 'email',
                   'contact_number', 'date', 'time', 'covers']
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control', "required": True}),
@@ -51,4 +52,3 @@ class ReserveForm(ModelForm):
             'contact_number': forms.NumberInput(attrs={'type': 'tel', 'class': 'form-control', "required": True}),
             'date': ReturnFutureDates(attrs={'type': 'date', 'class': 'form-control', "required": True}),
         }
-
