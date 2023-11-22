@@ -178,7 +178,7 @@ class Command(BaseCommand):
 ### Future Implentations
 * For this project, as emails were made optional for signup, i deemed the email booking as not having enough value to implement on this epic. However i do want to implement this in the future and make validated emails mandatory on signup.
 * I would like to refactor the table automation so that larger tables do not get occupied by small cover numbers EG 1 person at a table that could seat 4. 
-* I would like to redesign the navbar for mobile devices so that a sidebar overlay is used instead of a dropdown.  
+* I would like to redesign the navbar for mobile devices so that a sidebar overlay is used instead of a dropdown as some elements overlay over the dropdown nav element. 
 
 ## Technologies Used
 
@@ -336,6 +336,8 @@ Testing for this project was ongoing throughout, Using predemoninantly manual te
 ## Validation Testing 
 The W3C validator was used to validate all HTML pages on this site and also used to validate the CSS. 
 
+### HTML 
+
 | Page | Result |
 | :--- | :--- |
 | Home Page | pass |     
@@ -345,6 +347,8 @@ The W3C validator was used to validate all HTML pages on this site and also used
 | Menu |      |       
 | Reserve Success |      |
 
+### CSS 
+style.CSS file in static directory has passed W3C with no errors. 
 
 ```python 
     def prompt_new_game():
