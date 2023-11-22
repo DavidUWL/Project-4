@@ -4,12 +4,11 @@
 <div class="container-fluid">
   <div class="col-md-4">
     <h1>Amend your booking</h1>
-    <form method="POST">
+    <form method="POST" action="{% url 'get_bookings' %}" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-success">Update</button>
     </form>
-    <button class="btn btn-danger"><a href="{% url 'get_bookings'%}" class="text-decoration-none">Cancel</a></button>
   </div>
 
 

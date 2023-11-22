@@ -340,12 +340,13 @@ The W3C validator was used to validate all HTML pages on this site and also used
 
 | Page | Result |
 | :--- | :--- |
-| Home Page | pass |     
-| View Booking |      |     
-| Amend Booking |      |    
-| Cancel Booking |      | 
+| Home Page | Pass |     
+| View Booking | Pass |     
+| Amend Booking | Pass |    
+| Cancel Booking |    | 
 | Menu |      |       
 | Reserve Success |      |
+| Log Out | Pass | 
 
 ### CSS 
 style.CSS file in static directory has passed W3C with no errors. 
