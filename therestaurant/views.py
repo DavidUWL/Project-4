@@ -77,8 +77,10 @@ def amend_booking(request, entry_id):
 
     if request.method == 'POST':
         form = ReserveForm(request.POST, instance=entry)
-        form.save()
-        return redirect('get_bookings')
+
+        if form.is_valid():
+            form.save()
+            return redirect('get_bookings')
 
     else:
         form = ReserveForm(instance=entry)

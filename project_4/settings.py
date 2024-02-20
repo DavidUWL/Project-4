@@ -10,13 +10,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 TESTING = False
 
 if DEBUG:
-    ALLOWED_HOSTS = ['8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io']
+    ALLOWED_HOSTS = ['8000-daviduwl-project4-cm54n9ug5ae.ws-eu108.gitpod.io']
     CSRF_TRUSTED_ORIGINS = [
-        'https://8000-daviduwl-project4-jwzitk3c01w.ws-eu106.gitpod.io',
+        'https://8000-daviduwl-project4-cm54n9ug5ae.ws-eu108.gitpod.io',
         'https://*.127.0.0.1'
         ]
 else:
